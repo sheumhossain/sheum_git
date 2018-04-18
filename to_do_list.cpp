@@ -48,6 +48,25 @@ void Show_file()
    }
 }
 
+void Delete(int x)
+{
+	ofstream file_open("To_Do_list.txt",ios::app);
+	file_open<<"Delete "<<x+1<<" positionInList "<<endl;
+   file_open<<"\n"<<endl;
+	for(int i=0;i<listSize;i++)
+	{
+		if(x<i)
+		{
+			data[i-1].name=data[i].name;
+			data[i-1].description=data[i].description;
+			data[i-1].Date=data[i].Date;
+		}
+	}
+	listSize-=1;
+
+}
+
+
 int main()
 {
    int choice = 0;
