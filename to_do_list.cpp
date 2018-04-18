@@ -1,16 +1,20 @@
+#include <iostream>
 #include <string>
 #include<fstream>
 using namespace std;
-	
+
+
 int positionInList = 0;
 int listSize = 0;
 struct list
 {
-   string name;
+	string name;
    string description;
    string Date;
 };
 struct list data[100];
+
+
 
 bool Add_in_file(string name,string description, string Date)
 {
@@ -27,7 +31,6 @@ bool Add_in_file(string name,string description, string Date)
       return false;
    }
 }
-
 
 
 void Show_file()
@@ -47,7 +50,6 @@ void Show_file()
       cout << "" << endl;
    }
 }
-
 void Delete(int x)
 {
 	ofstream file_open("To_Do_list.txt",ios::app);
@@ -65,7 +67,6 @@ void Delete(int x)
 	listSize-=1;
 
 }
-
 
 int main()
 {
